@@ -1,0 +1,339 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "path",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "borrowAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum IArbExec.DEXType",
+						"name": "dexA",
+						"type": "uint8"
+					},
+					{
+						"internalType": "enum IArbExec.DEXType",
+						"name": "dexB",
+						"type": "uint8"
+					}
+				],
+				"name": "calculateProfitability",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "leg1AmountOut",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "leg2AmountOut",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "flashLoanPremium",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "gasCostEstimate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "builderTip",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "safetyBuffer",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "expectedGrossProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalCosts",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "expectedNetProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "isProfitable",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct IArbExec.ProfitabilityQuote",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "emergencyWithdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "offset",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "limit",
+						"type": "uint256"
+					}
+				],
+				"name": "getAllRoutes",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "routeId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address[]",
+								"name": "path",
+								"type": "address[]"
+							},
+							{
+								"internalType": "uint256",
+								"name": "minProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum IArbExec.DEXType",
+								"name": "dexA",
+								"type": "uint8"
+							},
+							{
+								"internalType": "enum IArbExec.DEXType",
+								"name": "dexB",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct IArbExec.ArbitrageRoute[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "routeId",
+						"type": "uint256"
+					}
+				],
+				"name": "getRoute",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "routeId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address[]",
+								"name": "path",
+								"type": "address[]"
+							},
+							{
+								"internalType": "uint256",
+								"name": "minProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum IArbExec.DEXType",
+								"name": "dexA",
+								"type": "uint8"
+							},
+							{
+								"internalType": "enum IArbExec.DEXType",
+								"name": "dexB",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct IArbExec.ArbitrageRoute",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getRouteCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "routeId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "quietEvents",
+						"type": "bool"
+					}
+				],
+				"name": "initiateArbitrage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdrawETH",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/ArbOptV2.sol": "IArbExec"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": [],
+		"viaIR": true
+	},
+	"sources": {
+		"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol": {
+			"keccak256": "0x6fcb2362801c027c14e8ae1ef8426d42b74eb0c91fae784637148986987964b0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://01e04a0ed9ee0b1ba5e6383f5c2b5c5a47c3cd456c175d3317b899c1fbc9a027",
+				"dweb:/ipfs/QmS3j8dU2tDgVPJU1mmDbXCKocvatduJTUyrCyu3sGyR2F"
+			]
+		},
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0x7f5545168576be365e4043ef480cd1d1542ebf31db05d4ef5ea71b86d00e6ced",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://784530ecf2cf2ba490ca3391a2fe965bf0c6ea2b5f09cd07cba1d7b47e5abb5b",
+				"dweb:/ipfs/QmXudCo8FrfSwk4kaZXtQZBm1PinPdoJ2iicVoJvBrriM8"
+			]
+		},
+		"@openzeppelin/contracts/security/Pausable.sol": {
+			"keccak256": "0x0b7aadc930e970256fbc353a8f5081e217ac0b1443e3d317cf4cb4cdf2445e3e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://72d90b3fc3a34b2db50c05839f6088f638ddf16aceb379c48e8aa724840fd5f6",
+				"dweb:/ipfs/QmUoEoGEDs4sq7pbSS1G4asybFW1B4jJ4YjExM39a34BhX"
+			]
+		},
+		"@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+			"keccak256": "0xbec94e472f5fde800401cdc48fe89c0260ab92b22965ddce17a715f9825b4f12",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d28923f397006622c72dccec7a22c9d5c4c8407c1285dace5e69f4a7d54545e5",
+				"dweb:/ipfs/QmPh1BnF3mrcUx1UZnE5uKjavTomomrJ5wdPwh22NvJSuz"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xa2d847c6ad19f5b8ac7c6f4c462bb4c1fd76307cb17478c49743354cf122f77f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bcb88894b8d6c2967694114eceba85a4dd40d7adea390e20e766657cb6d5d4be",
+				"dweb:/ipfs/QmQQVNAzL8PnhUCYzSvSoiEzuqNtEroBmyBgqCJ9hbKJ5B"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x3dcd533a3f709bda89bb8e649eb97aed96578e606f3796609544b1dcff975a0b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://83fa9b15077fd2f33f6c175d694e2f7ae9c9a289c7feaca40aa7d6feb8d87c26",
+				"dweb:/ipfs/QmQLfKCJ7mjiEeCGN1sHgWT8wjAMbAmBqcBVoQQyUZa5ws"
+			]
+		},
+		"contracts/ArbOptV2.sol": {
+			"keccak256": "0x621cde4a00be7a0e907d644397c6a7d31d4e640520ea3bb654d701773b619f9c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c35419008bed58cabc18df007708bc0271f28a6b43cb2c90ff3b894e582a7b54",
+				"dweb:/ipfs/QmbAbfBGHVnXyA3ETR9syd9zgMicNzSmdoPu92CQ3tutP6"
+			]
+		}
+	},
+	"version": 1
+}

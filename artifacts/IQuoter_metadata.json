@@ -1,0 +1,262 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "path",
+						"type": "bytes"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountIn",
+						"type": "uint256"
+					}
+				],
+				"name": "quoteExactInput",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountOut",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenIn",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenOut",
+						"type": "address"
+					},
+					{
+						"internalType": "uint24",
+						"name": "fee",
+						"type": "uint24"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint160",
+						"name": "sqrtPriceLimitX96",
+						"type": "uint160"
+					}
+				],
+				"name": "quoteExactInputSingle",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountOut",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/ArbExec.sol": "IQuoter"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": [],
+		"viaIR": true
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0x7f5545168576be365e4043ef480cd1d1542ebf31db05d4ef5ea71b86d00e6ced",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://784530ecf2cf2ba490ca3391a2fe965bf0c6ea2b5f09cd07cba1d7b47e5abb5b",
+				"dweb:/ipfs/QmXudCo8FrfSwk4kaZXtQZBm1PinPdoJ2iicVoJvBrriM8"
+			]
+		},
+		"@openzeppelin/contracts/interfaces/IERC1363.sol": {
+			"keccak256": "0x27d48fb11259528345803c0aa48dde8e2d495bb96cfd244191505dbd80d9cf5d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://137014f0ec2156eeb5472b07eafba7630e39db6648ca7627afbb87f023676b9e",
+				"dweb:/ipfs/QmYhDHgKSUmDyWnqFGq8UbaYATsUVCHkdG5EgwrUVsZuUC"
+			]
+		},
+		"@openzeppelin/contracts/interfaces/IERC165.sol": {
+			"keccak256": "0xc6ebdb3497d4662bd3aa8bc48bf356f7912a5fa42f9bb4f8584817cadf165784",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8caaa17034e30866b5df3b1f0ebd60abcda8757e3aa141962b5c07a69608ffae",
+				"dweb:/ipfs/QmW3bspXQY8Khz4c63uUcRCnprSKcWJT8avaKqvkWo9NF4"
+			]
+		},
+		"@openzeppelin/contracts/interfaces/IERC20.sol": {
+			"keccak256": "0xc708c0fc983c4e74902c46b56f09d08688cf59561e819a069ea7bcdb506cf0f2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://edac73f72cd3359f06b188458c74036ac06a586886db3345cc4c12b527a5bc7d",
+				"dweb:/ipfs/QmUkZZp9x8UnzHgGj6otpwYYVaxo6ZHSKH8Yr97wFu8Ydc"
+			]
+		},
+		"@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+			"keccak256": "0xbec94e472f5fde800401cdc48fe89c0260ab92b22965ddce17a715f9825b4f12",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d28923f397006622c72dccec7a22c9d5c4c8407c1285dace5e69f4a7d54545e5",
+				"dweb:/ipfs/QmPh1BnF3mrcUx1UZnE5uKjavTomomrJ5wdPwh22NvJSuz"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xa2d847c6ad19f5b8ac7c6f4c462bb4c1fd76307cb17478c49743354cf122f77f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bcb88894b8d6c2967694114eceba85a4dd40d7adea390e20e766657cb6d5d4be",
+				"dweb:/ipfs/QmQQVNAzL8PnhUCYzSvSoiEzuqNtEroBmyBgqCJ9hbKJ5B"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+			"keccak256": "0x720e6c9abddab40e1c4801517e852b641acc71b599857038dcc55d6d932ed174",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9272084af787a62081ef3243bbc80c9eecc17ca453dba80a5582645ac12415e4",
+				"dweb:/ipfs/QmaVBuLsASZy3QYj8AxTRuR483sJJTYspvy7sB3epRcYTA"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol": {
+			"keccak256": "0xcd6bb670a34a9fe83f1fa5827ff6cf35049b958eb9eac6b083499e9aadc9c7d8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2b012adee2bb47b519e5709e69a66d5b45866ccbd8defe86a26873a925e41833",
+				"dweb:/ipfs/QmYGvZf1i5BazVSG6fvLYECuC4uYUVDLwNG2oUVEWLJehN"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x3dcd533a3f709bda89bb8e649eb97aed96578e606f3796609544b1dcff975a0b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://83fa9b15077fd2f33f6c175d694e2f7ae9c9a289c7feaca40aa7d6feb8d87c26",
+				"dweb:/ipfs/QmQLfKCJ7mjiEeCGN1sHgWT8wjAMbAmBqcBVoQQyUZa5ws"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x564310f4788f096e1c1e77edd645999aa7fbad46dd545d7a722f70d5cfe19033",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://844ba854105b8a3e4cfb2cc37de926020beb97b238e85e00df05b79be953cec9",
+				"dweb:/ipfs/QmWG5HLDsFRNe3A2ZxvKcB79tqJN9V5yTwcBUjUPYhDki3"
+			]
+		},
+		"@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router01.sol": {
+			"keccak256": "0x88915555aa37aaefa7e62becd51ec47c61f09cb49bc9948db61246d81868e6d3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a62b3e5298c235e0499ee5f41cb5ba3771cc85807839cef5c5e1a7c10503d35c",
+				"dweb:/ipfs/QmVLpS4apvPgXmQPPSWaMjnC387qqjN2vazRAxu2hgfCXE"
+			]
+		},
+		"@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol": {
+			"keccak256": "0x59a477102803c044f944b57103c88ba44d2c35dd00fff0e26ed8bfb3da1e5a8b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4c00b815eeab9b9ed657b288d486200e6dbd1e6caeadf84b2c721696deb9bfad",
+				"dweb:/ipfs/QmWzC99Pauwc2AQzxLAc9dXkPj6MD8AMPP5UhkfrB84tin"
+			]
+		},
+		"@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol": {
+			"keccak256": "0x7161bdeebfe26028e147e2f31c5f1efdbca7b9004efaaf21baf46ae8f1df953e",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://225db90d90e693fac4fc630ed428820f9643a527ca27059cd9dbad0fc79b14d0",
+				"dweb:/ipfs/QmfEUsxTM8LoZTfazpcHhc8tevPid9EX9oLsNuJiVyXeS4"
+			]
+		},
+		"@uniswap/v3-periphery/contracts/interfaces/IQuoterV2.sol": {
+			"keccak256": "0xa07da6906683a37fef0c36ad4aad2597edbcddde39d73395e79278da44d7c22b",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://0add532b37a4439f6e89e3b03f478635101b6f47c4c959b79b25a3f89a6b309c",
+				"dweb:/ipfs/QmQC6qtQrRePhdH8BoCuKWnscrc44USLGYPe9W61WY8e5L"
+			]
+		},
+		"@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol": {
+			"keccak256": "0x27762f5100350f2413440a12588ea06b01ff98ba2b114cd9fff2609b9decd726",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://1379fee64912d089e8d0900d3b5ff325afb73ba442e4e39dc9268ec289bc1337",
+				"dweb:/ipfs/Qmdbv7S4CbrdVkgHR4rAmc2mzkj6Ru8P4VcKKNRBZAoSfu"
+			]
+		},
+		"contracts/ArbExec.sol": {
+			"keccak256": "0xcd2f8b5a90b6d2d42371561192e117c7b5d14b42484a7274952d8cf94d381431",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://060d303d6359cd4facfda42fa6c97cd592ef6e75a51e83f74d54aef4745347eb",
+				"dweb:/ipfs/QmdCQGZ8kLvssHvGviKpxMHDKdnzqYwTkansvp8ztWUz4P"
+			]
+		},
+		"github/aave/aave-v3-core/contracts/flashloan/interfaces/IFlashLoanSimpleReceiver.sol": {
+			"keccak256": "0x8e1170fd48b0b9e922b87d590853eb1468def8179782d3bf9463048d71790c94",
+			"license": "AGPL-3.0",
+			"urls": [
+				"bzz-raw://c14128f1c9c3a7103dec0a4593df911670a3bae16ad9eb7081fd7fdc65d716c0",
+				"dweb:/ipfs/QmdJHsGAe7Hj6SZswEBmfQS1hx6w6VbaMSXekjjF5RE3uG"
+			]
+		},
+		"github/aave/aave-v3-core/contracts/interfaces/IPool.sol": {
+			"keccak256": "0x4609b5344d6f378c1be974d34020c61e6ffe32835dff717806532af3b10bb9dc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://37f22ea00d821db20c3a600b88b914f538c663e3b82eca5e262c9d4d7d49f11e",
+				"dweb:/ipfs/QmTvfAaBDxntgB4ZsoqrbNigoQvh81sEwAP6GSJBAXrFYo"
+			]
+		},
+		"github/aave/aave-v3-core/contracts/interfaces/IPoolAddressesProvider.sol": {
+			"keccak256": "0x46a43509b56d27801ab87c863e1d8efd98f763417d5cf42d4dc5fbc9c851cc31",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2034673d8f77647801a51d045b9f1806d614c97c3cd03a56e6b06babe965d1f5",
+				"dweb:/ipfs/QmeBrxjYuQhcDvM7W6pn3CSyXDa43E29MYKTqxXv5EH4hz"
+			]
+		},
+		"github/aave/aave-v3-core/contracts/protocol/libraries/types/DataTypes.sol": {
+			"keccak256": "0xbcb940d37da0caf2004eac98e45635a02bc253650a282acf8b66124699a68709",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://667c9747c0dc78c157f5bae536fee2cd336bf9811d715fb1ce25757533383d13",
+				"dweb:/ipfs/QmbFu7EiN2wvDZR55WRgqYh5HJecdToGTsprnZsvQwb18u"
+			]
+		}
+	},
+	"version": 1
+}

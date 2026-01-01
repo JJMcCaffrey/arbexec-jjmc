@@ -1,0 +1,146 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "setUp",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "test_analyzeGasEfficiency",
+				"outputs": [],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "test_analyzeHistoricalTrades",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "test_analyzeHistoricalTrades_EmptyArray",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "test_backtestParameters",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "test_calculateProfitability",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "test_calculateProfitability_Unprofitable",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "test_calculateProfitability_ZeroBorrowAmount",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "test_findOptimalBorrowAmount",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "test_findOptimalBorrowAmount_InvalidRange",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "test_generateParameterRecommendations",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "test_sensitivityAnalysis",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "test_sensitivityAnalysis_ArrayLengthMismatch",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/test/ArbitrageAnalyzer.test.sol": "ArbitrageAnalyzerTest"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": [],
+		"viaIR": true
+	},
+	"sources": {
+		"contracts/src/ArbitrageAnalyzer.sol": {
+			"keccak256": "0xf2bd92e2052239a2872d78aea2cd4e9d09ca3a4e52d98667090aed6ff1763b66",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c7c741ae2034a397e6cfeac0b12f2cbeabe697efe5332c043d1f75779c09c720",
+				"dweb:/ipfs/QmQNgHNw7LPDAkFZbNpg8pFugXYac7YgCSvQUpDvcp2R5b"
+			]
+		},
+		"contracts/test/ArbitrageAnalyzer.test.sol": {
+			"keccak256": "0x7a3516ed30f6bf3f977a1a6d2eeff6c2ef3368a0c74ba42435e65bc5e619b7b7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://dad635696b7ef5ce2ead4e48570d8b381664c14a5dccb2253d96a0f88032bad8",
+				"dweb:/ipfs/QmQ6xTkCGedhuHQ5wE8FVCjJH4jWgkLdVjUzqumqjBHRgh"
+			]
+		}
+	},
+	"version": 1
+}

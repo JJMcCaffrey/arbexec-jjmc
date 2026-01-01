@@ -1,0 +1,633 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_analyzer",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "meanProfit",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "successRate",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "recommendedMinProfitBps",
+						"type": "uint256"
+					}
+				],
+				"name": "AnalysisComplete",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "analyzeGasUsage",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "meanGasCost",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "profitPerGasUnit",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "recommendation",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "analyzer",
+				"outputs": [
+					{
+						"internalType": "contract ArbitrageAnalyzer",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "findOptimalAmount",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "optimalAmount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "maxProfit",
+								"type": "uint256"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "borrowAmount",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "flashLoanFee",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "gasCost",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "builderTip",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "safetyBuffer",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "totalCosts",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "grossProfit",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "netProfit",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "roi",
+										"type": "uint256"
+									},
+									{
+										"internalType": "bool",
+										"name": "isProfitable",
+										"type": "bool"
+									},
+									{
+										"components": [
+											{
+												"internalType": "uint256",
+												"name": "flashLoanFeePercent",
+												"type": "uint256"
+											},
+											{
+												"internalType": "uint256",
+												"name": "gasCostPercent",
+												"type": "uint256"
+											},
+											{
+												"internalType": "uint256",
+												"name": "builderTipPercent",
+												"type": "uint256"
+											},
+											{
+												"internalType": "uint256",
+												"name": "safetyBufferPercent",
+												"type": "uint256"
+											}
+										],
+										"internalType": "struct ArbitrageAnalyzer.CostPercentages",
+										"name": "costBreakdown",
+										"type": "tuple"
+									}
+								],
+								"internalType": "struct ArbitrageAnalyzer.ProfitabilityBreakdown",
+								"name": "profitability",
+								"type": "tuple"
+							}
+						],
+						"internalType": "struct ArbitrageAnalyzer.OptimalBorrowResult",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "borrowAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "expectedLeg1Out",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "expectedLeg2Out",
+						"type": "uint256"
+					}
+				],
+				"name": "getDetailedProfitabilityBreakdown",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "borrowAmount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "flashLoanFee",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "gasCost",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "builderTip",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "safetyBuffer",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalCosts",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "grossProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "netProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "roi",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "isProfitable",
+								"type": "bool"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "flashLoanFeePercent",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "gasCostPercent",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "builderTipPercent",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "safetyBufferPercent",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct ArbitrageAnalyzer.CostPercentages",
+								"name": "costBreakdown",
+								"type": "tuple"
+							}
+						],
+						"internalType": "struct ArbitrageAnalyzer.ProfitabilityBreakdown",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "runBacktest",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "minProfitBps",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "maxSlippageBps",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "successCount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "roi",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ArbitrageAnalyzer.BacktestResult[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "runCompleteAnalysis",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "meanProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "medianProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "stdDeviation",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "minProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "maxProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "successRate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "averageGasUsed",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalTrades",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ArbitrageAnalyzer.StatisticalAnalysis",
+						"name": "",
+						"type": "tuple"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "minProfitBps",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "maxSlippageBps",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "deadlineSeconds",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "gasUnitsEstimate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "confidence",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "reasoning",
+								"type": "string"
+							}
+						],
+						"internalType": "struct ArbitrageAnalyzer.ParameterRecommendation",
+						"name": "",
+						"type": "tuple"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "borrowAmount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "flashLoanFee",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "gasCost",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "builderTip",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "safetyBuffer",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalCosts",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "grossProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "netProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "roi",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "isProfitable",
+								"type": "bool"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "flashLoanFeePercent",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "gasCostPercent",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "builderTipPercent",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "safetyBufferPercent",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct ArbitrageAnalyzer.CostPercentages",
+								"name": "costBreakdown",
+								"type": "tuple"
+							}
+						],
+						"internalType": "struct ArbitrageAnalyzer.ProfitabilityBreakdown",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "runSensitivityAnalysis",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "gasPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "flashLoanPremiumBps",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "netProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "roi",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ArbitrageAnalyzer.SensitivityResult[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "This is a reference implementation showing all major functions",
+			"kind": "dev",
+			"methods": {
+				"analyzeGasUsage()": {
+					"details": "Evaluates how efficiently gas is being used relative to profits"
+				},
+				"findOptimalAmount()": {
+					"details": "Demonstrates finding the best amount to borrow for maximum profit"
+				},
+				"runBacktest()": {
+					"details": "Tests which parameter combinations would have been most successful historically"
+				},
+				"runCompleteAnalysis()": {
+					"details": "Demonstrates the typical workflow for analyzing arbitrage opportunities"
+				},
+				"runSensitivityAnalysis()": {
+					"details": "Shows how profit changes with different gas prices and loan premiums"
+				}
+			},
+			"title": "AnalyzerUsageExample",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"analyzeGasUsage()": {
+					"notice": "Analyze gas efficiency"
+				},
+				"findOptimalAmount()": {
+					"notice": "Find optimal borrow amount"
+				},
+				"getDetailedProfitabilityBreakdown(uint256,uint256,uint256)": {
+					"notice": "Get detailed breakdown for a specific scenario"
+				},
+				"runBacktest()": {
+					"notice": "Backtest parameter combinations"
+				},
+				"runCompleteAnalysis()": {
+					"notice": "Complete analysis pipeline"
+				},
+				"runSensitivityAnalysis()": {
+					"notice": "Run sensitivity analysis"
+				}
+			},
+			"notice": "Example contract demonstrating how to use ArbitrageAnalyzer",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/src/AnalyzerUsageExample.sol": "AnalyzerUsageExample"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": [],
+		"viaIR": true
+	},
+	"sources": {
+		"contracts/src/AnalyzerUsageExample.sol": {
+			"keccak256": "0xc42c9c77ea88446f2421951c41c837e98cd125dbcb07aaab3483c8b50be3d791",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f81891c0d6af08b4b50114cec7736a61aebe92d1eaf9c6916cf4302864bc0852",
+				"dweb:/ipfs/QmeKDjZkptjzugJvQsYF93V1N63Vd5FoPTPiNcpvBXh9DY"
+			]
+		},
+		"contracts/src/ArbitrageAnalyzer.sol": {
+			"keccak256": "0xf2bd92e2052239a2872d78aea2cd4e9d09ca3a4e52d98667090aed6ff1763b66",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c7c741ae2034a397e6cfeac0b12f2cbeabe697efe5332c043d1f75779c09c720",
+				"dweb:/ipfs/QmQNgHNw7LPDAkFZbNpg8pFugXYac7YgCSvQUpDvcp2R5b"
+			]
+		}
+	},
+	"version": 1
+}

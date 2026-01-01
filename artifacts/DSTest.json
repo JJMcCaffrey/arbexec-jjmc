@@ -1,0 +1,450 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "6080806040523461002157600160ff195f5416175f5561023a90816100268239f35b5f80fdfe60806040526004361015610011575f80fd5b5f803560e01c8063ba414fa6146100545763fa7626d414610030575f80fd5b3461005157806003193601126100515760ff60209154166040519015158152f35b80fd5b5034610051578060031936011261005157602061006f6100af565b6040519015158152f35b90601f8019910116810190811067ffffffffffffffff82111761009b57604052565b634e487b7160e01b5f52604160045260245ffd5b5f805460081c60ff16156100c7575460081c60ff1690565b80737109709ecfa91a80626ff3989d68f67f5b1dd12d803b6100e857505090565b90915060405160209180838301526519985a5b195960d21b604083015260408252606082019167ffffffffffffffff92818110848211176101f05791828692936040526080840190630667f9d760e41b8252845187855b8281106101d857505090610169602487879894889501856084820152036004810184520182610079565b51925af1503d156101d0573d9081116101bc5760405190610193601f8201601f1916840183610079565b81523d838383013e5b81818051810103126101b8570151908115158203610051575090565b8280fd5b634e487b7160e01b83526041600452602483fd5b50606061019c565b808801808301516084909101528a965089910161013f565b634e487b7160e01b86526041600452602486fdfea2646970667358221220392cc2222ac3e034cfd2fa95bcc91f3182aac60d4beecb3d02bd8c3f304dfed164736f6c63430008140033",
+			"opcodes": "PUSH1 0x80 DUP1 PUSH1 0x40 MSTORE CALLVALUE PUSH2 0x21 JUMPI PUSH1 0x1 PUSH1 0xFF NOT PUSH0 SLOAD AND OR PUSH0 SSTORE PUSH2 0x23A SWAP1 DUP2 PUSH2 0x26 DUP3 CODECOPY RETURN JUMPDEST PUSH0 DUP1 REVERT INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT ISZERO PUSH2 0x11 JUMPI PUSH0 DUP1 REVERT JUMPDEST PUSH0 DUP1 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0xBA414FA6 EQ PUSH2 0x54 JUMPI PUSH4 0xFA7626D4 EQ PUSH2 0x30 JUMPI PUSH0 DUP1 REVERT JUMPDEST CALLVALUE PUSH2 0x51 JUMPI DUP1 PUSH1 0x3 NOT CALLDATASIZE ADD SLT PUSH2 0x51 JUMPI PUSH1 0xFF PUSH1 0x20 SWAP2 SLOAD AND PUSH1 0x40 MLOAD SWAP1 ISZERO ISZERO DUP2 MSTORE RETURN JUMPDEST DUP1 REVERT JUMPDEST POP CALLVALUE PUSH2 0x51 JUMPI DUP1 PUSH1 0x3 NOT CALLDATASIZE ADD SLT PUSH2 0x51 JUMPI PUSH1 0x20 PUSH2 0x6F PUSH2 0xAF JUMP JUMPDEST PUSH1 0x40 MLOAD SWAP1 ISZERO ISZERO DUP2 MSTORE RETURN JUMPDEST SWAP1 PUSH1 0x1F DUP1 NOT SWAP2 ADD AND DUP2 ADD SWAP1 DUP2 LT PUSH8 0xFFFFFFFFFFFFFFFF DUP3 GT OR PUSH2 0x9B JUMPI PUSH1 0x40 MSTORE JUMP JUMPDEST PUSH4 0x4E487B71 PUSH1 0xE0 SHL PUSH0 MSTORE PUSH1 0x41 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH0 REVERT JUMPDEST PUSH0 DUP1 SLOAD PUSH1 0x8 SHR PUSH1 0xFF AND ISZERO PUSH2 0xC7 JUMPI SLOAD PUSH1 0x8 SHR PUSH1 0xFF AND SWAP1 JUMP JUMPDEST DUP1 PUSH20 0x7109709ECFA91A80626FF3989D68F67F5B1DD12D DUP1 EXTCODESIZE PUSH2 0xE8 JUMPI POP POP SWAP1 JUMP JUMPDEST SWAP1 SWAP2 POP PUSH1 0x40 MLOAD PUSH1 0x20 SWAP2 DUP1 DUP4 DUP4 ADD MSTORE PUSH6 0x19985A5B1959 PUSH1 0xD2 SHL PUSH1 0x40 DUP4 ADD MSTORE PUSH1 0x40 DUP3 MSTORE PUSH1 0x60 DUP3 ADD SWAP2 PUSH8 0xFFFFFFFFFFFFFFFF SWAP3 DUP2 DUP2 LT DUP5 DUP3 GT OR PUSH2 0x1F0 JUMPI SWAP2 DUP3 DUP7 SWAP3 SWAP4 PUSH1 0x40 MSTORE PUSH1 0x80 DUP5 ADD SWAP1 PUSH4 0x667F9D7 PUSH1 0xE4 SHL DUP3 MSTORE DUP5 MLOAD DUP8 DUP6 JUMPDEST DUP3 DUP2 LT PUSH2 0x1D8 JUMPI POP POP SWAP1 PUSH2 0x169 PUSH1 0x24 DUP8 DUP8 SWAP9 SWAP5 DUP9 SWAP6 ADD DUP6 PUSH1 0x84 DUP3 ADD MSTORE SUB PUSH1 0x4 DUP2 ADD DUP5 MSTORE ADD DUP3 PUSH2 0x79 JUMP JUMPDEST MLOAD SWAP3 GAS CALL POP RETURNDATASIZE ISZERO PUSH2 0x1D0 JUMPI RETURNDATASIZE SWAP1 DUP2 GT PUSH2 0x1BC JUMPI PUSH1 0x40 MLOAD SWAP1 PUSH2 0x193 PUSH1 0x1F DUP3 ADD PUSH1 0x1F NOT AND DUP5 ADD DUP4 PUSH2 0x79 JUMP JUMPDEST DUP2 MSTORE RETURNDATASIZE DUP4 DUP4 DUP4 ADD RETURNDATACOPY JUMPDEST DUP2 DUP2 DUP1 MLOAD DUP2 ADD SUB SLT PUSH2 0x1B8 JUMPI ADD MLOAD SWAP1 DUP2 ISZERO ISZERO DUP3 SUB PUSH2 0x51 JUMPI POP SWAP1 JUMP JUMPDEST DUP3 DUP1 REVERT JUMPDEST PUSH4 0x4E487B71 PUSH1 0xE0 SHL DUP4 MSTORE PUSH1 0x41 PUSH1 0x4 MSTORE PUSH1 0x24 DUP4 REVERT JUMPDEST POP PUSH1 0x60 PUSH2 0x19C JUMP JUMPDEST DUP1 DUP9 ADD DUP1 DUP4 ADD MLOAD PUSH1 0x84 SWAP1 SWAP2 ADD MSTORE DUP11 SWAP7 POP DUP10 SWAP2 ADD PUSH2 0x13F JUMP JUMPDEST PUSH4 0x4E487B71 PUSH1 0xE0 SHL DUP7 MSTORE PUSH1 0x41 PUSH1 0x4 MSTORE PUSH1 0x24 DUP7 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 CODECOPY 0x2C 0xC2 0x22 0x2A 0xC3 0xE0 CALLVALUE 0xCF 0xD2 STATICCALL SWAP6 0xBC 0xC9 0x1F BALANCE DUP3 0xAA 0xC6 0xD 0x4B 0xEE 0xCB RETURNDATASIZE MUL 0xBD DUP13 EXTCODEHASH ADDRESS 0x4D INVALID 0xD1 PUSH5 0x736F6C6343 STOP ADDMOD EQ STOP CALLER ",
+			"sourceMap": "732:20355:0:-:0;;;;;;;1631:4;732:20355;;1631:4;732:20355;;;1631:4;732:20355;;;;;;;;;;;"
+		},
+		"deployedBytecode": {
+			"functionDebugData": {
+				"finalize_allocation": {
+					"entryPoint": 121,
+					"id": null,
+					"parameterSlots": 2,
+					"returnSlots": 0
+				},
+				"fun_failed": {
+					"entryPoint": 175,
+					"id": 172,
+					"parameterSlots": 0,
+					"returnSlots": 1
+				}
+			},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "60806040526004361015610011575f80fd5b5f803560e01c8063ba414fa6146100545763fa7626d414610030575f80fd5b3461005157806003193601126100515760ff60209154166040519015158152f35b80fd5b5034610051578060031936011261005157602061006f6100af565b6040519015158152f35b90601f8019910116810190811067ffffffffffffffff82111761009b57604052565b634e487b7160e01b5f52604160045260245ffd5b5f805460081c60ff16156100c7575460081c60ff1690565b80737109709ecfa91a80626ff3989d68f67f5b1dd12d803b6100e857505090565b90915060405160209180838301526519985a5b195960d21b604083015260408252606082019167ffffffffffffffff92818110848211176101f05791828692936040526080840190630667f9d760e41b8252845187855b8281106101d857505090610169602487879894889501856084820152036004810184520182610079565b51925af1503d156101d0573d9081116101bc5760405190610193601f8201601f1916840183610079565b81523d838383013e5b81818051810103126101b8570151908115158203610051575090565b8280fd5b634e487b7160e01b83526041600452602483fd5b50606061019c565b808801808301516084909101528a965089910161013f565b634e487b7160e01b86526041600452602486fdfea2646970667358221220392cc2222ac3e034cfd2fa95bcc91f3182aac60d4beecb3d02bd8c3f304dfed164736f6c63430008140033",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT ISZERO PUSH2 0x11 JUMPI PUSH0 DUP1 REVERT JUMPDEST PUSH0 DUP1 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0xBA414FA6 EQ PUSH2 0x54 JUMPI PUSH4 0xFA7626D4 EQ PUSH2 0x30 JUMPI PUSH0 DUP1 REVERT JUMPDEST CALLVALUE PUSH2 0x51 JUMPI DUP1 PUSH1 0x3 NOT CALLDATASIZE ADD SLT PUSH2 0x51 JUMPI PUSH1 0xFF PUSH1 0x20 SWAP2 SLOAD AND PUSH1 0x40 MLOAD SWAP1 ISZERO ISZERO DUP2 MSTORE RETURN JUMPDEST DUP1 REVERT JUMPDEST POP CALLVALUE PUSH2 0x51 JUMPI DUP1 PUSH1 0x3 NOT CALLDATASIZE ADD SLT PUSH2 0x51 JUMPI PUSH1 0x20 PUSH2 0x6F PUSH2 0xAF JUMP JUMPDEST PUSH1 0x40 MLOAD SWAP1 ISZERO ISZERO DUP2 MSTORE RETURN JUMPDEST SWAP1 PUSH1 0x1F DUP1 NOT SWAP2 ADD AND DUP2 ADD SWAP1 DUP2 LT PUSH8 0xFFFFFFFFFFFFFFFF DUP3 GT OR PUSH2 0x9B JUMPI PUSH1 0x40 MSTORE JUMP JUMPDEST PUSH4 0x4E487B71 PUSH1 0xE0 SHL PUSH0 MSTORE PUSH1 0x41 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH0 REVERT JUMPDEST PUSH0 DUP1 SLOAD PUSH1 0x8 SHR PUSH1 0xFF AND ISZERO PUSH2 0xC7 JUMPI SLOAD PUSH1 0x8 SHR PUSH1 0xFF AND SWAP1 JUMP JUMPDEST DUP1 PUSH20 0x7109709ECFA91A80626FF3989D68F67F5B1DD12D DUP1 EXTCODESIZE PUSH2 0xE8 JUMPI POP POP SWAP1 JUMP JUMPDEST SWAP1 SWAP2 POP PUSH1 0x40 MLOAD PUSH1 0x20 SWAP2 DUP1 DUP4 DUP4 ADD MSTORE PUSH6 0x19985A5B1959 PUSH1 0xD2 SHL PUSH1 0x40 DUP4 ADD MSTORE PUSH1 0x40 DUP3 MSTORE PUSH1 0x60 DUP3 ADD SWAP2 PUSH8 0xFFFFFFFFFFFFFFFF SWAP3 DUP2 DUP2 LT DUP5 DUP3 GT OR PUSH2 0x1F0 JUMPI SWAP2 DUP3 DUP7 SWAP3 SWAP4 PUSH1 0x40 MSTORE PUSH1 0x80 DUP5 ADD SWAP1 PUSH4 0x667F9D7 PUSH1 0xE4 SHL DUP3 MSTORE DUP5 MLOAD DUP8 DUP6 JUMPDEST DUP3 DUP2 LT PUSH2 0x1D8 JUMPI POP POP SWAP1 PUSH2 0x169 PUSH1 0x24 DUP8 DUP8 SWAP9 SWAP5 DUP9 SWAP6 ADD DUP6 PUSH1 0x84 DUP3 ADD MSTORE SUB PUSH1 0x4 DUP2 ADD DUP5 MSTORE ADD DUP3 PUSH2 0x79 JUMP JUMPDEST MLOAD SWAP3 GAS CALL POP RETURNDATASIZE ISZERO PUSH2 0x1D0 JUMPI RETURNDATASIZE SWAP1 DUP2 GT PUSH2 0x1BC JUMPI PUSH1 0x40 MLOAD SWAP1 PUSH2 0x193 PUSH1 0x1F DUP3 ADD PUSH1 0x1F NOT AND DUP5 ADD DUP4 PUSH2 0x79 JUMP JUMPDEST DUP2 MSTORE RETURNDATASIZE DUP4 DUP4 DUP4 ADD RETURNDATACOPY JUMPDEST DUP2 DUP2 DUP1 MLOAD DUP2 ADD SUB SLT PUSH2 0x1B8 JUMPI ADD MLOAD SWAP1 DUP2 ISZERO ISZERO DUP3 SUB PUSH2 0x51 JUMPI POP SWAP1 JUMP JUMPDEST DUP3 DUP1 REVERT JUMPDEST PUSH4 0x4E487B71 PUSH1 0xE0 SHL DUP4 MSTORE PUSH1 0x41 PUSH1 0x4 MSTORE PUSH1 0x24 DUP4 REVERT JUMPDEST POP PUSH1 0x60 PUSH2 0x19C JUMP JUMPDEST DUP1 DUP9 ADD DUP1 DUP4 ADD MLOAD PUSH1 0x84 SWAP1 SWAP2 ADD MSTORE DUP11 SWAP7 POP DUP10 SWAP2 ADD PUSH2 0x13F JUMP JUMPDEST PUSH4 0x4E487B71 PUSH1 0xE0 SHL DUP7 MSTORE PUSH1 0x41 PUSH1 0x4 MSTORE PUSH1 0x24 DUP7 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 CODECOPY 0x2C 0xC2 0x22 0x2A 0xC3 0xE0 CALLVALUE 0xCF 0xD2 STATICCALL SWAP6 0xBC 0xC9 0x1F BALANCE DUP3 0xAA 0xC6 0xD 0x4B 0xEE 0xCB RETURNDATASIZE MUL 0xBD DUP13 EXTCODEHASH ADDRESS 0x4D INVALID 0xD1 PUSH5 0x736F6C6343 STOP ADDMOD EQ STOP CALLER ",
+			"sourceMap": "732:20355:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;1712:64;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;1865:600;1920:7;732:20355;;;;;;;;;;;;;;;1944:14::o;1916:542::-;1991:25;3025:106;;;2031:382;;2427:19;;;:::o;2031:382::-;732:20355;;;;;2251:43;;;;;;1712:64;;;;732:20355;1712:64;;;732:20355;2251:43;;732:20355;1712:64;;;;;;;;;;;;;;;;;;;732:20355;1712:64;2139:178;;;1712:64;;;;;;;;;;;;;;;;;;;2139:178;1712:64;;;;;;;;;;;;;2139:178;;;;;;;;;:::i;:::-;2099:237;;;;-1:-1:-1;1712:64:0;;;;;;;;;;732:20355;;;1712:64;;;;-1:-1:-1;;1712:64:0;;;732:20355;1712:64;:::i;:::-;;;;;;;;;;;;;;2370:27;;1712:64;;;;2370:27;1712:64;732:20355;;;;1712:64;;;;2355:42;2427:19;:::o;1712:64::-;732:20355;;;1712:64;-1:-1:-1;;;1712:64:0;;;2139:178;1712:64;;;;;;732:20355;1712:64;;;;;;;;;;;;;;;;;-1:-1:-1;1712:64:0;;;;;;-1:-1:-1;;;1712:64:0;;;;;;;"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "114000",
+				"executionCost": "24384",
+				"totalCost": "138384"
+			},
+			"external": {
+				"IS_TEST()": "2283",
+				"failed()": "infinite"
+			},
+			"internal": {
+				"assertEq(address,address)": "infinite",
+				"assertEq(address,address,string memory)": "infinite",
+				"assertEq(bytes32,bytes32)": "infinite",
+				"assertEq(bytes32,bytes32,string memory)": "infinite",
+				"assertEq(int256,int256)": "infinite",
+				"assertEq(int256,int256,string memory)": "infinite",
+				"assertEq(string memory,string memory)": "infinite",
+				"assertEq(string memory,string memory,string memory)": "infinite",
+				"assertEq(uint256,uint256)": "infinite",
+				"assertEq(uint256,uint256,string memory)": "infinite",
+				"assertEq0(bytes memory,bytes memory)": "infinite",
+				"assertEq0(bytes memory,bytes memory,string memory)": "infinite",
+				"assertEq32(bytes32,bytes32)": "infinite",
+				"assertEq32(bytes32,bytes32,string memory)": "infinite",
+				"assertEqDecimal(int256,int256,uint256)": "infinite",
+				"assertEqDecimal(int256,int256,uint256,string memory)": "infinite",
+				"assertEqDecimal(uint256,uint256,uint256)": "infinite",
+				"assertEqDecimal(uint256,uint256,uint256,string memory)": "infinite",
+				"assertGe(int256,int256)": "infinite",
+				"assertGe(int256,int256,string memory)": "infinite",
+				"assertGe(uint256,uint256)": "infinite",
+				"assertGe(uint256,uint256,string memory)": "infinite",
+				"assertGeDecimal(int256,int256,uint256)": "infinite",
+				"assertGeDecimal(int256,int256,uint256,string memory)": "infinite",
+				"assertGeDecimal(uint256,uint256,uint256)": "infinite",
+				"assertGeDecimal(uint256,uint256,uint256,string memory)": "infinite",
+				"assertGt(int256,int256)": "infinite",
+				"assertGt(int256,int256,string memory)": "infinite",
+				"assertGt(uint256,uint256)": "infinite",
+				"assertGt(uint256,uint256,string memory)": "infinite",
+				"assertGtDecimal(int256,int256,uint256)": "infinite",
+				"assertGtDecimal(int256,int256,uint256,string memory)": "infinite",
+				"assertGtDecimal(uint256,uint256,uint256)": "infinite",
+				"assertGtDecimal(uint256,uint256,uint256,string memory)": "infinite",
+				"assertLe(int256,int256)": "infinite",
+				"assertLe(int256,int256,string memory)": "infinite",
+				"assertLe(uint256,uint256)": "infinite",
+				"assertLe(uint256,uint256,string memory)": "infinite",
+				"assertLeDecimal(int256,int256,uint256)": "infinite",
+				"assertLeDecimal(int256,int256,uint256,string memory)": "infinite",
+				"assertLeDecimal(uint256,uint256,uint256)": "infinite",
+				"assertLeDecimal(uint256,uint256,uint256,string memory)": "infinite",
+				"assertLt(int256,int256)": "infinite",
+				"assertLt(int256,int256,string memory)": "infinite",
+				"assertLt(uint256,uint256)": "infinite",
+				"assertLt(uint256,uint256,string memory)": "infinite",
+				"assertLtDecimal(int256,int256,uint256)": "infinite",
+				"assertLtDecimal(int256,int256,uint256,string memory)": "infinite",
+				"assertLtDecimal(uint256,uint256,uint256)": "infinite",
+				"assertLtDecimal(uint256,uint256,uint256,string memory)": "infinite",
+				"assertNotEq(address,address)": "infinite",
+				"assertNotEq(address,address,string memory)": "infinite",
+				"assertNotEq(bytes32,bytes32)": "infinite",
+				"assertNotEq(bytes32,bytes32,string memory)": "infinite",
+				"assertNotEq(int256,int256)": "infinite",
+				"assertNotEq(int256,int256,string memory)": "infinite",
+				"assertNotEq(string memory,string memory)": "infinite",
+				"assertNotEq(string memory,string memory,string memory)": "infinite",
+				"assertNotEq(uint256,uint256)": "infinite",
+				"assertNotEq(uint256,uint256,string memory)": "infinite",
+				"assertNotEq0(bytes memory,bytes memory)": "infinite",
+				"assertNotEq0(bytes memory,bytes memory,string memory)": "infinite",
+				"assertNotEq32(bytes32,bytes32)": "infinite",
+				"assertNotEq32(bytes32,bytes32,string memory)": "infinite",
+				"assertNotEqDecimal(int256,int256,uint256)": "infinite",
+				"assertNotEqDecimal(int256,int256,uint256,string memory)": "infinite",
+				"assertNotEqDecimal(uint256,uint256,uint256)": "infinite",
+				"assertNotEqDecimal(uint256,uint256,uint256,string memory)": "infinite",
+				"assertTrue(bool)": "infinite",
+				"assertTrue(bool,string memory)": "infinite",
+				"checkEq0(bytes memory,bytes memory)": "infinite",
+				"fail()": "infinite",
+				"hasHEVMContext()": "infinite"
+			}
+		},
+		"methodIdentifiers": {
+			"IS_TEST()": "fa7626d4",
+			"failed()": "ba414fa6"
+		}
+	},
+	"abi": [
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"name": "log",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"name": "log_address",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "bytes",
+					"name": "",
+					"type": "bytes"
+				}
+			],
+			"name": "log_bytes",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "bytes32",
+					"name": "",
+					"type": "bytes32"
+				}
+			],
+			"name": "log_bytes32",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "int256",
+					"name": "",
+					"type": "int256"
+				}
+			],
+			"name": "log_int",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "val",
+					"type": "address"
+				}
+			],
+			"name": "log_named_address",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "bytes",
+					"name": "val",
+					"type": "bytes"
+				}
+			],
+			"name": "log_named_bytes",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "bytes32",
+					"name": "val",
+					"type": "bytes32"
+				}
+			],
+			"name": "log_named_bytes32",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "int256",
+					"name": "val",
+					"type": "int256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				}
+			],
+			"name": "log_named_decimal_int",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "val",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				}
+			],
+			"name": "log_named_decimal_uint",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "int256",
+					"name": "val",
+					"type": "int256"
+				}
+			],
+			"name": "log_named_int",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "val",
+					"type": "string"
+				}
+			],
+			"name": "log_named_string",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "val",
+					"type": "uint256"
+				}
+			],
+			"name": "log_named_uint",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"name": "log_string",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"name": "log_uint",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "bytes",
+					"name": "",
+					"type": "bytes"
+				}
+			],
+			"name": "logs",
+			"type": "event"
+		},
+		{
+			"inputs": [],
+			"name": "IS_TEST",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "failed",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	]
+}

@@ -1,0 +1,989 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "ArrayLengthMismatch",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "DivisionByZero",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InsufficientData",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidInput",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidPriceFeed",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidTokenAddress",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tradeCount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "meanProfit",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "successRate",
+						"type": "uint256"
+					}
+				],
+				"name": "AnalysisPerformed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "scenarioCount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "bestRoi",
+						"type": "uint256"
+					}
+				],
+				"name": "BacktestCompleted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "minProfitBps",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "maxSlippageBps",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "confidence",
+						"type": "uint256"
+					}
+				],
+				"name": "ParametersRecommended",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "borrowAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "netProfit",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "isProfitable",
+						"type": "bool"
+					}
+				],
+				"name": "ProfitabilityCalculated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "scenarioCount",
+						"type": "uint256"
+					}
+				],
+				"name": "SensitivityAnalysisPerformed",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "profit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "gasUsed",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "slippage",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "executionTime",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ArbitrageAnalyzer.TradeData[]",
+						"name": "trades",
+						"type": "tuple[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "gasPrices",
+						"type": "uint256[]"
+					}
+				],
+				"name": "analyzeGasEfficiency",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "meanGasCost",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "profitPerGasUnit",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "recommendation",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "profit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "gasUsed",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "slippage",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "executionTime",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ArbitrageAnalyzer.TradeData[]",
+						"name": "trades",
+						"type": "tuple[]"
+					}
+				],
+				"name": "analyzeHistoricalTrades",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "meanProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "medianProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "stdDeviation",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "minProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "maxProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "successRate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "averageGasUsed",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalTrades",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ArbitrageAnalyzer.StatisticalAnalysis",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "profit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "gasUsed",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "slippage",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "executionTime",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ArbitrageAnalyzer.TradeData[]",
+						"name": "trades",
+						"type": "tuple[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "minProfitBpsArray",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "maxSlippageBpsArray",
+						"type": "uint256[]"
+					}
+				],
+				"name": "backtestParameters",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "minProfitBps",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "maxSlippageBps",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "successCount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "roi",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ArbitrageAnalyzer.BacktestResult[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "borrowAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "flashLoanPremiumBps",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "gasPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "gasUnitsEstimate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "leg1AmountOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "leg2AmountOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "builderTipBps",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "safetyBufferBps",
+						"type": "uint256"
+					}
+				],
+				"name": "calculateProfitability",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "borrowAmount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "flashLoanFee",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "gasCost",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "builderTip",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "safetyBuffer",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalCosts",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "grossProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "netProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "roi",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "isProfitable",
+								"type": "bool"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "flashLoanFeePercent",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "gasCostPercent",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "builderTipPercent",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "safetyBufferPercent",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct ArbitrageAnalyzer.CostPercentages",
+								"name": "costBreakdown",
+								"type": "tuple"
+							}
+						],
+						"internalType": "struct ArbitrageAnalyzer.ProfitabilityBreakdown",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "minBorrowAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "maxBorrowAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "step",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "priceRatio",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "flashLoanPremiumBps",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "gasPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "gasUnitsEstimate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "builderTipBps",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "safetyBufferBps",
+						"type": "uint256"
+					}
+				],
+				"name": "findOptimalBorrowAmount",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "optimalAmount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "maxProfit",
+								"type": "uint256"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "borrowAmount",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "flashLoanFee",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "gasCost",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "builderTip",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "safetyBuffer",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "totalCosts",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "grossProfit",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "netProfit",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "roi",
+										"type": "uint256"
+									},
+									{
+										"internalType": "bool",
+										"name": "isProfitable",
+										"type": "bool"
+									},
+									{
+										"components": [
+											{
+												"internalType": "uint256",
+												"name": "flashLoanFeePercent",
+												"type": "uint256"
+											},
+											{
+												"internalType": "uint256",
+												"name": "gasCostPercent",
+												"type": "uint256"
+											},
+											{
+												"internalType": "uint256",
+												"name": "builderTipPercent",
+												"type": "uint256"
+											},
+											{
+												"internalType": "uint256",
+												"name": "safetyBufferPercent",
+												"type": "uint256"
+											}
+										],
+										"internalType": "struct ArbitrageAnalyzer.CostPercentages",
+										"name": "costBreakdown",
+										"type": "tuple"
+									}
+								],
+								"internalType": "struct ArbitrageAnalyzer.ProfitabilityBreakdown",
+								"name": "profitability",
+								"type": "tuple"
+							}
+						],
+						"internalType": "struct ArbitrageAnalyzer.OptimalBorrowResult",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "meanProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "medianProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "stdDeviation",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "minProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "maxProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "successRate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "averageGasUsed",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalTrades",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ArbitrageAnalyzer.StatisticalAnalysis",
+						"name": "analysis",
+						"type": "tuple"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "profit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "gasUsed",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "slippage",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "executionTime",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ArbitrageAnalyzer.TradeData[]",
+						"name": "trades",
+						"type": "tuple[]"
+					}
+				],
+				"name": "generateParameterRecommendations",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "minProfitBps",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "maxSlippageBps",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "deadlineSeconds",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "gasUnitsEstimate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "confidence",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "reasoning",
+								"type": "string"
+							}
+						],
+						"internalType": "struct ArbitrageAnalyzer.ParameterRecommendation",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "baseProfit",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "baseBorrowAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "gasPrices",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "flashLoanPremiums",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "gasUnitsEstimate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "builderTipBps",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "safetyBufferBps",
+						"type": "uint256"
+					}
+				],
+				"name": "sensitivityAnalysis",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "gasPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "flashLoanPremiumBps",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "netProfit",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "roi",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ArbitrageAnalyzer.SensitivityResult[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Performs statistical analysis on historical trade data and recommends parameters Does NOT execute trades or interact with DEXs",
+			"kind": "dev",
+			"methods": {
+				"analyzeGasEfficiency((uint256,uint256,uint256,uint256)[],uint256[])": {
+					"params": {
+						"gasPrices": "Array of gas prices used in each trade",
+						"trades": "Historical trade data with gas information"
+					},
+					"returns": {
+						"meanGasCost": "Average gas cost",
+						"profitPerGasUnit": "Average profit per gas unit",
+						"recommendation": "Text recommendation"
+					}
+				},
+				"analyzeHistoricalTrades((uint256,uint256,uint256,uint256)[])": {
+					"params": {
+						"trades": "Array of historical trade data"
+					},
+					"returns": {
+						"_0": "StatisticalAnalysis with computed metrics"
+					}
+				},
+				"backtestParameters((uint256,uint256,uint256,uint256)[],uint256[],uint256[])": {
+					"params": {
+						"maxSlippageBpsArray": "Array of maxSlippageBps to test",
+						"minProfitBpsArray": "Array of minProfitBps to test",
+						"trades": "Historical trade data"
+					},
+					"returns": {
+						"_0": "Array of BacktestResult for each combination"
+					}
+				},
+				"calculateProfitability(uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256)": {
+					"params": {
+						"borrowAmount": "Amount to borrow in Wei",
+						"builderTipBps": "Builder tip in BPS",
+						"flashLoanPremiumBps": "Flash loan premium in BPS",
+						"gasPrice": "Gas price in Wei",
+						"gasUnitsEstimate": "Estimated gas units",
+						"leg1AmountOut": "Expected output from first leg in Wei",
+						"leg2AmountOut": "Expected output from second leg in Wei",
+						"safetyBufferBps": "Safety buffer in BPS"
+					},
+					"returns": {
+						"_0": "ProfitabilityBreakdown with detailed cost analysis"
+					}
+				},
+				"findOptimalBorrowAmount(uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256)": {
+					"params": {
+						"builderTipBps": "Builder tip in BPS",
+						"flashLoanPremiumBps": "Flash loan premium in BPS",
+						"gasPrice": "Gas price in Wei",
+						"gasUnitsEstimate": "Estimated gas units",
+						"maxBorrowAmount": "Maximum borrow amount in Wei",
+						"minBorrowAmount": "Minimum borrow amount in Wei",
+						"priceRatio": "Expected ratio of leg2Out / leg1Out (in PRECISION)",
+						"safetyBufferBps": "Safety buffer in BPS",
+						"step": "Step size for iteration in Wei"
+					},
+					"returns": {
+						"_0": "OptimalBorrowResult with optimal amount and profitability"
+					}
+				},
+				"generateParameterRecommendations((uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),(uint256,uint256,uint256,uint256)[])": {
+					"params": {
+						"analysis": "StatisticalAnalysis from analyzeHistoricalTrades",
+						"trades": "Original trade data for slippage and execution time analysis"
+					},
+					"returns": {
+						"_0": "ParameterRecommendation with suggested parameters"
+					}
+				},
+				"sensitivityAnalysis(uint256,uint256,uint256[],uint256[],uint256,uint256,uint256)": {
+					"params": {
+						"baseBorrowAmount": "Base borrow amount in Wei",
+						"baseProfit": "Base profit amount in Wei",
+						"builderTipBps": "Builder tip in BPS",
+						"flashLoanPremiums": "Array of flash loan premiums to test in BPS",
+						"gasPrices": "Array of gas prices to test in Wei",
+						"gasUnitsEstimate": "Estimated gas units",
+						"safetyBufferBps": "Safety buffer in BPS"
+					},
+					"returns": {
+						"_0": "Array of SensitivityResult for each combination"
+					}
+				}
+			},
+			"title": "ArbitrageAnalyzer",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"analyzeGasEfficiency((uint256,uint256,uint256,uint256)[],uint256[])": {
+					"notice": "Analyze gas efficiency of trades"
+				},
+				"analyzeHistoricalTrades((uint256,uint256,uint256,uint256)[])": {
+					"notice": "Analyze historical trade data and generate statistics"
+				},
+				"backtestParameters((uint256,uint256,uint256,uint256)[],uint256[],uint256[])": {
+					"notice": "Backtest parameter combinations against historical trades"
+				},
+				"calculateProfitability(uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256)": {
+					"notice": "Calculate detailed profitability for a specific trade scenario"
+				},
+				"findOptimalBorrowAmount(uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256)": {
+					"notice": "Find optimal borrow amount for maximum profit"
+				},
+				"generateParameterRecommendations((uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),(uint256,uint256,uint256,uint256)[])": {
+					"notice": "Generate parameter recommendations based on analysis"
+				},
+				"sensitivityAnalysis(uint256,uint256,uint256[],uint256[],uint256,uint256,uint256)": {
+					"notice": "Perform sensitivity analysis on parameter variations"
+				}
+			},
+			"notice": "Pure analysis contract for identifying optimal arbitrage parameters",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/src/ArbitrageAnalyzer.sol": "ArbitrageAnalyzer"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": [],
+		"viaIR": true
+	},
+	"sources": {
+		"contracts/src/ArbitrageAnalyzer.sol": {
+			"keccak256": "0xf2bd92e2052239a2872d78aea2cd4e9d09ca3a4e52d98667090aed6ff1763b66",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c7c741ae2034a397e6cfeac0b12f2cbeabe697efe5332c043d1f75779c09c720",
+				"dweb:/ipfs/QmQNgHNw7LPDAkFZbNpg8pFugXYac7YgCSvQUpDvcp2R5b"
+			]
+		}
+	},
+	"version": 1
+}
